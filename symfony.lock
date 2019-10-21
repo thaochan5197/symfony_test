@@ -81,8 +81,36 @@
     "doctrine/reflection": {
         "version": "v1.0.0"
     },
+    "easycorp/easyadmin-bundle": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.0",
+            "ref": "0a51040a43c6f2172a3a0135cd15daf2043905d7"
+        },
+        "files": [
+            "config/packages/easy_admin.yaml",
+            "config/routes/easy_admin.yaml"
+        ]
+    },
     "egulias/email-validator": {
         "version": "2.1.11"
+    },
+    "elasticsearch/elasticsearch": {
+        "version": "v6.7.2"
+    },
+    "friendsofsymfony/elastica-bundle": {
+        "version": "5.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "5.0",
+            "ref": "a5638a07d11c8eef6f0280a20d6d1ddd91ad62ec"
+        },
+        "files": [
+            "config/packages/fos_elastica.yaml"
+        ]
     },
     "friendsofsymfony/rest-bundle": {
         "version": "2.2",
@@ -101,6 +129,12 @@
     },
     "gedmo/doctrine-extensions": {
         "version": "v2.4.37"
+    },
+    "guzzlehttp/ringphp": {
+        "version": "1.1.1"
+    },
+    "guzzlehttp/streams": {
+        "version": "3.0.0"
     },
     "hoa/compiler": {
         "version": "3.17.08.08"
@@ -164,6 +198,9 @@
             "config/packages/prod/jms_serializer.yaml"
         ]
     },
+    "lexik/translation-bundle": {
+        "version": "v4.0.14"
+    },
     "nikic/php-parser": {
         "version": "v4.2.4"
     },
@@ -193,6 +230,12 @@
     },
     "psr/log": {
         "version": "1.1.0"
+    },
+    "react/promise": {
+        "version": "v2.7.1"
+    },
+    "ruflin/elastica": {
+        "version": "6.1.1"
     },
     "sensio/framework-extra-bundle": {
         "version": "5.2",
@@ -263,6 +306,9 @@
     },
     "symfony/event-dispatcher-contracts": {
         "version": "v1.1.7"
+    },
+    "symfony/expression-language": {
+        "version": "v4.3.5"
     },
     "symfony/filesystem": {
         "version": "v4.3.5"
@@ -513,6 +559,9 @@
     "symfony/yaml": {
         "version": "v4.3.5"
     },
+    "tecnickcom/tcpdf": {
+        "version": "6.3.2"
+    },
     "twig/twig": {
         "version": "v2.12.0"
     },
@@ -521,6 +570,9 @@
     },
     "white-october/pagerfanta-bundle": {
         "version": "v1.2.4"
+    },
+    "whiteoctober/tcpdf-bundle": {
+        "version": "1.1.2"
     },
     "willdurand/jsonp-callback-validator": {
         "version": "v1.1.0"

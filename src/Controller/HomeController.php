@@ -8,12 +8,17 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/home", name="/")
+     * @Route("/", name="home")
      */
     public function index()
     {
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
+        if($this->isGranted('ROLE_ADMIN'))
+        {
+            return $this->redirectToRoute('easyadmin');
+        }
+        else
+        {
+            return $this->redirectToRoute('fos_user_profile_show');
+        }
     }
 }

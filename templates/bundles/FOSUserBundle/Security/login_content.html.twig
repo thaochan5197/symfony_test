@@ -6,7 +6,7 @@
 
 <form action="{{ path("fos_user_security_check") }}" method="post">
     {% if csrf_token %}
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        <input type="hidden" id="abc" name="_csrf_token" value="{{ csrf_token }}" />
     {% endif %}
 
     <label for="username">{{ 'security.login.username'|trans }}</label>
@@ -20,3 +20,17 @@
 
     <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
 </form>
+<div id="token" token="{{ csrf_token }}"></div>
+{% block javascripts %}
+<script >
+    var token = document.getElementById("token").getAttribute("token");
+    console.log(token);
+</script>
+{% endblock %}
+
+{% if csrf_token %}
+    <input type="hidden" name="_csrf_token" id="abc" value="{{ csrf_token }}" />
+{% endif %}
+<div id="root">
+
+</div>

@@ -29,5 +29,9 @@
             {% block fos_user_content %}
             {% endblock fos_user_content %}
         </div>
+        {% block javascript %}
+        {{ encore_entry_script_tags('app') }}
+
+    {% endblock %}
     </body>
 </html>

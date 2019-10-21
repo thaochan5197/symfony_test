@@ -3,6 +3,9 @@
 namespace App\Controller\Api;
 
 use App\Entity\Staffs;
+use App\Entity\User;
+use FOS\ElasticaBundle\FOSElasticaBundle;
+use FOS\ElasticaBundle\Manager\RepositoryManagerInterface;
 use FOS\RestBundle\Controller\AbstractFOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use App\Form\StaffsType;
@@ -24,9 +27,12 @@ class StaffsController extends AbstractFOSRestController
      *
      * @return Response
      */
-    public function getStaffAction(Request $request)
+    public function getStaffAction(Request $request,RepositoryManagerInterface $finder)
     {
-        $page = $request->query->get('page', 1);
+        $result = $finder->getRepository(User::class)->find('silico');
+//        $finder = $this->container->get('fos_elastica.finder.app_user.user');
+//        $result = $finder->find('admin');
+            $page = $request->query->get('page', 1);
         $qb = $this->getDoctrine()
             ->getRepository(Staffs::class)
             ->findAllQueryBuilder();
@@ -45,6 +51,7 @@ class StaffsController extends AbstractFOSRestController
             'total' => $pagerfanta->getNbResults(),
             'count' => count($staffs),
             'staffs' => $staffs,
+            'result' => $result,
         ];
         $data = $this->view($data);
 
