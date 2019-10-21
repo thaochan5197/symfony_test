@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}My Application{% endblock %}</title>
+        {% block stylesheet %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        <div id="sidebar">
+            {% block sidebar %}
+                <ul>
+                    <li><a href="{{ path('/') }}">Home</a></li>
+                    <li><a href="{{ path('organization_type_index') }}">Organization Type</a></li>
+                    <li><a href="{{ path('organization_index') }}">Organization</a></li>
+                    <li><a href="{{ path('position_index') }}">Position</a></li>
+                    <li><a href="{{ path('staffs_index') }}">Staffs</a></li>
+                </ul>
+            {% endblock %}
+        </div>
+
+        <div id="content">
+            {% block body %}{% endblock %}
+        </div>
+
+    {% block javascript %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+    </body>
+</html>

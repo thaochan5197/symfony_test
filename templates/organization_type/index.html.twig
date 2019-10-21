@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}OrganizationType index{% endblock %}
+
+{% block body %}
+    <h1>OrganizationType index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for organization_type in organization_types %}
+            <tr>
+                <td>{{ organization_type.id }}</td>
+                <td>{{ organization_type.name }}</td>
+                <td>
+                    <a href="{{ path('organization_type_show', {'id': organization_type.id}) }}">show</a>
+                    <a href="{{ path('organization_type_edit', {'id': organization_type.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('organization_type_new') }}">Create new</a>
+{% endblock %}
