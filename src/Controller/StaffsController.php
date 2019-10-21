@@ -54,7 +54,7 @@ class StaffsController extends AbstractController
      */
     public function show(Staffs $staff): Response
     {
-        return $this->render('staffs/show.html.twig', [
+         return $this->render('staffs/show.html.twig', [
             'staff' => $staff,
         ]);
     }

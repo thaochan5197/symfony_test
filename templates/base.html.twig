@@ -20,12 +20,14 @@
             {% endblock %}
         </div>
 
-        <div id="content">
-            {% block body %}{% endblock %}
+        <div id="content" class="testfrontend">
+            {% block body %}<div id="root"></div>{% endblock %}
+
         </div>
 
     {% block javascript %}
         {{ encore_entry_script_tags('app') }}
+
     {% endblock %}
     </body>
 </html>

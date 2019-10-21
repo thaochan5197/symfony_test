@@ -1,0 +1,15 @@
+easy_admin:
+    list:
+        item_permission: 'ROLE_ADMIN'
+    entities:
+        staffs:
+            class: App\Entity\Staffs
+            list:
+                fields: ['id', 'name', 'phone', 'email']
+
+        user:
+            controller: App\Controller\Admin\UserController
+            class: App\Entity\User
+            list:
+                fields: ['username', 'email', 'enabled', 'roles']
+
