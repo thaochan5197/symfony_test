@@ -29,9 +29,10 @@
             {% block fos_user_content %}
             {% endblock fos_user_content %}
         </div>
+        <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
         {% block javascript %}
-        {{ encore_entry_script_tags('app') }}
-
-    {% endblock %}
+            {{ encore_entry_script_tags('index') }}
+        {% endblock %}
     </body>
 </html>

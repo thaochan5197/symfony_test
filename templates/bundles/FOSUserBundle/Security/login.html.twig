@@ -8,6 +8,10 @@
         {% endif %}
     </div>
 {% endblock fos_user_content %}
+ {% block javascript %}
+        {{parent()}}
+        {{ encore_entry_script_tags('login') }}
+{% endblock %}
 
 
 

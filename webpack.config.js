@@ -23,8 +23,9 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('app', './assets/js/app.js')
-    .addEntry('loginform', './assets/js/Components/LoginForm.js')
+    .addEntry('index', './assets/js/index.js')
+    .addEntry('login', './assets/js/Login/login.js')
+    .addEntry('navbar', './assets/js/Components/NavBar.js')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
