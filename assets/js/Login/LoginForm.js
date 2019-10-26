@@ -68,7 +68,7 @@ class LoginForm extends React.Component {
         event.preventDefault();
         const {_username, _password} = this.state;
         axios.post(
-            Routing.generate("fos_user_security_login"),
+            Routing.generate("fos_user_security_check"),
             {
                 _username: _username,
                 _password: _password,

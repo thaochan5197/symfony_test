@@ -22,6 +22,7 @@ class SecurityController extends Login
      */
     public function loginAction(Request $request)
     {
+        dump(1);
         return parent::loginAction($request);
     }
 
@@ -30,8 +31,10 @@ class SecurityController extends Login
         $error = $data['error'];
         dump($data);
         if (isset($error) && $error instanceof AuthenticationException) {
+
             return JsonResponse::create(["message" => $error->getMessage()],302);
         }
+
         return parent::renderLogin($data);
     }
 }
