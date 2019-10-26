@@ -62,7 +62,6 @@ class LoginForm extends React.Component {
         )
             .then(response => {
                 console.log(response);
-                console.log(response.data);
 
                 if (response.status == 200) {
                     console.log("Login successfull");

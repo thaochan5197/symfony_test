@@ -3,6 +3,7 @@
 
 namespace App\EventListener;
 
+<<<<<<< HEAD
 //use Symfony\Component\HttpFoundation\JsonResponse;
 //use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 //
@@ -63,3 +64,28 @@ class LoginListener implements AuthenticationSuccessHandlerInterface
     }
 
 }
+=======
+
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
+
+class LoginListener
+{
+    private $em;
+
+    public function __construct(EntityManagerInterface $em)
+    {
+        $this->em = $em;
+    }
+
+    public function onSecurityInteractiveLogin(InteractiveLoginEvent $event)
+    {
+        $user = $event->getAuthenticationToken()->getUser();
+
+//        $user->setConfirmationToken("1");
+//
+//        $this->em->persist($user);
+//        $this->em->flush();
+    }
+}
+>>>>>>> b234d4564e5950ed622a32a2fe27588a0a960c9e
