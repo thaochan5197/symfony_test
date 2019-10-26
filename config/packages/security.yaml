@@ -20,17 +20,11 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
-<<<<<<< HEAD
 #                default_target_path: home
                 check_path: fos_user_security_check
                 login_path: fos_user_security_login
                 success_handler: app.loginListener
                 failure_handler: app.loginFailListener
-=======
-                default_target_path: home
-                check_path: fos_user_security_check
-                login_path: security_login
->>>>>>> b234d4564e5950ed622a32a2fe27588a0a960c9e
 
             logout: true
             anonymous:    true

@@ -1,6 +1,5 @@
 lexik_translation:
   fallback_locale: [en]         # (required) default locale(s) to use
-<<<<<<< HEAD
   managed_locales: [en, fr, vn] # (required) locales that the bundle has to manage
   storage:
     type: orm                  # orm | mongodb | propel
@@ -9,10 +8,3 @@ lexik_translation:
 
   grid_input_type: text    # text|textarea
   grid_toggle_similar: true
-=======
-  managed_locales: [en, fr, de] # (required) locales that the bundle has to manage
-  storage:
-    type: orm                  # orm | mongodb | propel
-    object_manager: default
-  base_layout: "LexikTranslationBundle::layout.html.twig"
->>>>>>> b234d4564e5950ed622a32a2fe27588a0a960c9e
