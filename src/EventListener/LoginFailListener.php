@@ -17,7 +17,6 @@ class LoginFailListener implements AuthenticationFailureHandlerInterface
     {
         $request = new Request();
         $exception = $event->getAuthenticationException();
-
         $this->onAuthenticationFailure($request, $exception);
     }
 

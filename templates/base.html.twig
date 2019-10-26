@@ -24,10 +24,15 @@
             {% block body %}<div id="root"></div>{% endblock %}
 
         </div>
-
+{#        <div id="content">#}
+            {% block body %}
+                <div id="root"></div>
+            {% endblock %}
+{#        </div>#}
+        <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
     {% block javascript %}
-        {{ encore_entry_script_tags('app') }}
-
+        {{ encore_entry_script_tags('index') }}
     {% endblock %}
     </body>
 </html>
