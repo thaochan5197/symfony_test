@@ -9,6 +9,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\EasyAdminController;
 
 class UserController extends EasyAdminController
 {
+
     public function deleteAction()
     {
         $id = $this->request->query->get('id');

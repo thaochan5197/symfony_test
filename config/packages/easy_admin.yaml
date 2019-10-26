@@ -1,4 +1,3 @@
-
 easy_admin:
   list:
     item_permission: 'ROLE_ADMIN'
