@@ -1,4 +1,12 @@
 easy_admin:
+  design:
+    menu:
+      - { label: 'Tools' }
+      - { label: 'Translation', route: 'lexik_translation_grid', icon: 'book'}
+      - label: 'Manager'
+      - staffs
+      - user
+      - { entity: 'user', permission: 'ROLE_SUPER_ADMIN' }
   list:
     item_permission: 'ROLE_ADMIN'
   entities:
@@ -10,6 +18,7 @@ easy_admin:
     user:
       controller: App\Controller\Admin\UserController
       class: App\Entity\User
+
       list:
         fields: ['username', 'email', 'enabled', 'roles']
       edit:

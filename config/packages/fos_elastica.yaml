@@ -15,4 +15,5 @@ fos_elastica:
                         model: App\Entity\User
                         provider: ~
                         finder: ~
+                        repository: App\Repository\SearchRepository\UserRepository
 
