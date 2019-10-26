@@ -20,8 +20,5 @@ return [
     WhiteOctober\TCPDFBundle\WhiteOctoberTCPDFBundle::class => ['all' => true],
     EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle::class => ['all' => true],
     Lexik\Bundle\TranslationBundle\LexikTranslationBundle::class => ['all' => true],
-<<<<<<< HEAD
     FOS\ElasticaBundle\FOSElasticaBundle::class => ['all' => true],
-=======
->>>>>>> b234d4564e5950ed622a32a2fe27588a0a960c9e
 ];
