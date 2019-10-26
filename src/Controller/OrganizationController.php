@@ -56,6 +56,7 @@ class OrganizationController extends AbstractController
      */
     public function show(Organizations $organization)
     {
+
         return $this->render('organization/show.html.twig', [
             'organization' => $organization,
         ]);

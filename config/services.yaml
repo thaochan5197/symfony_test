@@ -32,3 +32,21 @@ services:
     App\EventListener\LoginListener:
         tags:
             - { name: 'kernel.event_listener', event: 'security.interactive_login' }
+    #    App\EventListener\ExceptionListener:
+    #        tags:
+    #            - { name: kernel.event_listener, event: kernel.exception}
+
+    app.loginListener:
+        class: App\EventListener\LoginListener
+        tags:
+            - { name: 'kernel.event_listener', event: 'security.interactive_login' }
+
+    app.loginFailListener:
+        class: App\EventListener\LoginFailListener
+        tags:
+            - { name: 'kernel.event_listener', event: 'security.authentication.failure' }
+
+#    app.authentication_success_handler:
+#        class: App\EventListener\LoginListener
+#        tags:
+#            - { name: kernel.event_listener, event: security.interactive_login, method: onSecurityInteractiveLogin }

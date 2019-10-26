@@ -68,7 +68,7 @@ class LoginForm extends React.Component {
         event.preventDefault();
         const {_username, _password} = this.state;
         axios.post(
-            Routing.generate("user_security_check"),
+            Routing.generate("fos_user_security_login"),
             {
                 _username: _username,
                 _password: _password,
@@ -77,20 +77,12 @@ class LoginForm extends React.Component {
             },
             {withCredentials: true}
         )
-            .then(response => {
+            .then(response=>{
                 console.log(response);
-                if (response.status == 200) {
-                    console.log("Login successfull");
-                    alert("Login successfull");
-                }
-                else if (response.status == 302) {
-                    console.log("Username password do not match");
-                    alert("Username Password do not match")
-                }
-                else {
-                    console.log("Username does not exists");
-                    alert("Username does not exist");
-                }
+                return response.json()
+            })
+            .then(data => {
+                console.log(data);
             })
             .catch(error => {
                 console.log("Login error", error);

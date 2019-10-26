@@ -3,26 +3,63 @@
 
 namespace App\EventListener;
 
+//use Symfony\Component\HttpFoundation\JsonResponse;
+//use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+//
+//use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
+//
+//class LoginListener
+//{
+//
+//    public function __construct(UrlGeneratorInterface $router)
+//    {
+//        $this->router = $router;
+//    }
+//
+//    public function onSecurityInteractiveLogin(InteractiveLoginEvent $event)
+//    {
+//
+//        $event->getRequest();
+//        $url = $this->router->generate('home');
+//
+//        return new JsonResponse(['message' => 'Login success', 'url' => $url], 200);
+//    }
+//}
 
-use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Http\Authentication\AuthenticationSuccessHandlerInterface;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 
-class LoginListener
+class LoginListener implements AuthenticationSuccessHandlerInterface
 {
-    private $em;
-
-    public function __construct(EntityManagerInterface $em)
+    public function __construct(UrlGeneratorInterface $router)
     {
-        $this->em = $em;
+        $this->router = $router;
     }
+
+//    public function onSecurityInteractiveLogin(InteractiveLoginEvent $event)
+//    {
+//
+//        $event->getRequest();
+//        $url = $this->router->generate('home');
+//
+//        return new JsonResponse(['message' => 'Login success', 'url' => $url], 200);
+//    }
 
     public function onSecurityInteractiveLogin(InteractiveLoginEvent $event)
     {
-        $user = $event->getAuthenticationToken()->getUser();
-
-//        $user->setConfirmationToken("1");
-//
-//        $this->em->persist($user);
-//        $this->em->flush();
+        $token = $event->getAuthenticationToken();
+        $request = $event->getRequest();
+        $this->onAuthenticationSuccess($request, $token);
     }
+
+    public function onAuthenticationSuccess(Request $request, TokenInterface $token)
+    {
+        $url = $this->router->generate('home');
+        return new JsonResponse(['message' => 'Login success', 'url' => $url], 200);
+    }
+
 }

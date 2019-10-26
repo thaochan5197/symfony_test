@@ -1,15 +1,32 @@
 easy_admin:
-    list:
-        item_permission: 'ROLE_ADMIN'
-    entities:
-        staffs:
-            class: App\Entity\Staffs
-            list:
-                fields: ['id', 'name', 'phone', 'email']
+  list:
+    item_permission: 'ROLE_ADMIN'
+  entities:
+    staffs:
+      class: App\Entity\Staffs
+      list:
+        fields: ['id', 'name', 'phone', 'email']
 
-        user:
-            controller: App\Controller\Admin\UserController
-            class: App\Entity\User
-            list:
-                fields: ['username', 'email', 'enabled', 'roles']
-
+    user:
+      controller: App\Controller\Admin\UserController
+      class: App\Entity\User
+      list:
+        fields: ['username', 'email', 'enabled', 'roles']
+      edit:
+        fields:
+          - username
+          - email
+          - enabled
+          - { property: 'plainPassword', type: 'text', type_options: {required: false} }
+          - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN': 'ROLE_SUPER_ADMIN' } }}
+        form_options: { validation_groups: ['Profile'] }
+      new:
+        actions:
+          - { name: 'restock' }
+        fields:
+          - username
+          - email
+          - enabled
+          - { property: 'plainPassword', type: 'text', type_options: {required: true} }
+          - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'ROLE_USER': 'ROLE_USER', 'ROLE_ADMIN': 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN': 'ROLE_SUPER_ADMIN' } }}
+        form_options: { validation_groups: ['Registration'] }
