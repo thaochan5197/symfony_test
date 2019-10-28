@@ -1,8 +1,22 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
-    </div>
-{{ form_end(form) }}
+{#{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}#}
+{#    {{ form_widget(form) }}#}
+{#    <div>#}
+{#        <input type="submit" value="{{ 'registration.submit'|trans }}" />#}
+{#    </div>#}
+{#{{ form_end(form) }}#}
+{#<div id="token" token="{{ csrf_token }}"></div>#}
+{#{% block javascripts %}#}
+{#    <script >#}
+{#        const token = document.getElementById("token").getAttribute("token");#}
+{#        console.log(token);#}
+{#    </script>#}
+{#{% endblock %}#}
+
+{#{% if csrf_token %}#}
+{#    <input type="hidden" name="_csrf_token" id="abc" value="{{ csrf_token }}" />#}
+{#{% endif %}#}
+<div id="registerWrapper">
+
+</div>
