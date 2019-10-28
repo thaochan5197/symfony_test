@@ -22,6 +22,6 @@ class LoginFailListener implements AuthenticationFailureHandlerInterface
 
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception)
     {
-        return new JsonResponse(["message" => 'Login fail', 'status' => 302 ], 302);
+        return new JsonResponse(["message" => 'Login fail', 'status' => 302 ], 200);
     }
 }
