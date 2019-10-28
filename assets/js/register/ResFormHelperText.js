@@ -19,7 +19,7 @@ class ResFormHelperText extends React.Component {
 
     render() {
         return (
-            <FormHelperText error>{this.state.status ? <Notification /> : undefined}</FormHelperText>
+            <FormHelperText onClick={this.validateText} error>{this.state.status ? <Notification /> : undefined}</FormHelperText>
         )
     }
 }

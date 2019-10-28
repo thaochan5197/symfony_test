@@ -13,3 +13,8 @@ fos_user_security_check:
   controller: App\Controller\Api\SecurityController::loginAction
   options:
     expose: true
+fos_user_register:
+  resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+  prefix: /register
+  options:
+    expose: true

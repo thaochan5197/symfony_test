@@ -77,12 +77,10 @@ class LoginForm extends React.Component {
             },
             {withCredentials: true}
         )
-            .then(response=>{
-                console.log(response);
-                return response.json()
-            })
             .then(data => {
                 console.log(data);
+                console.log(data.data.url);
+                window.location.href=data.data.url;
             })
             .catch(error => {
                 console.log("Login error", error);
@@ -142,7 +140,7 @@ class LoginForm extends React.Component {
                                     </Link>
                                 </Grid>
                                 <Grid item className={classes.action}>
-                                    <Link href="#" variant="body2">
+                                    <Link href="/register" variant="body2">
                                         {"Don't have an account? Sign Up"}
                                     </Link>
                                 </Grid>
